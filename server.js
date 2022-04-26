@@ -38,5 +38,5 @@ const PORT = process.env.PORT;
 console.log(process.env);
 app.listen(PORT, () => {
     console.log("hello shashwat, the server has started on PORT: " + PORT)
-})
+}, PORT)
 
