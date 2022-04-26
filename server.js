@@ -35,8 +35,7 @@ app.get('/profile/:id', (req, res) => {profile.handleProfile(req, res, db)})
 app.put('/image', (req, res) => {imageCount.handleImageCount(req, res, db)});
 app.post('/imageurl', (req, res) => {imageCount.handleAPICall(req, res)});
 const PORT = process.env.PORT;
-console.log(process.env);
 app.listen(PORT, () => {
     console.log("hello shashwat, the server has started on PORT: " + PORT)
-}, PORT)
+})
 
