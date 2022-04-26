@@ -26,8 +26,7 @@ const db = require('knex')({
 
 
 app.get('/', (req, res)  => {
-    db.select("*").from('users')
-    .then(response => res.json(response))
+    res.json("working smartbrain api")
 })
 app.post('/signin', signin.handleSignIn(db, bcrypt))
 app.post('/register' , (req, res) => (register.handleRegister(req, res, db, bcrypt)))
