@@ -10,7 +10,7 @@ const profile = require('./controllers/profile');
 const db = require('knex')({
     client: 'pg',
     connection: {
-      host : '127.0.0.1',
+      host : 'postgresql-curly-89649',
       port : 5432,
       user : 'postgres',
       password : '123',
@@ -33,8 +33,11 @@ app.post('/register' , (req, res) => (register.handleRegister(req, res, db, bcry
 app.get('/profile/:id', (req, res) => {profile.handleProfile(req, res, db)})
 app.put('/image', (req, res) => {imageCount.handleImageCount(req, res, db)});
 app.post('/imageurl', (req, res) => {imageCount.handleAPICall(req, res)});
-const PORT = process.env.PORT;
+let PORT = process.env.PORT;
+if(PORT === undefined) {
+  PORT = 3200
+}
 app.listen(PORT, () => {
-    console.log("hello shashwat, the server has started on PORT: " + PORT)
+    console.log("hello shashwat, the server has started on PORT: ", PORT)
 })
 
